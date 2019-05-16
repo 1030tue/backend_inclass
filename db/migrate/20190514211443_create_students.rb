@@ -8,6 +8,8 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.integer :age
       t.integer :grade
       t.string :gender
+      t.string :guardians_name
+      t.string :relationship_to_student
       t.string :guardians_email
       t.string :guardians_phone
       t.boolean :inclass, :default => true

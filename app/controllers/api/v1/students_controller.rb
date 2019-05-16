@@ -12,6 +12,7 @@ class Api::V1::StudentsController < ApplicationController
 
   def create
     @student = Student.create(student_params)
+    Enroll.create(student_id: @student.id, period_id: 1)
     render json: @student
   end
 
@@ -30,7 +31,7 @@ class Api::V1::StudentsController < ApplicationController
   private
 
   def student_params
-    params.permit(:id, :firstname, :lastname, :email, :age, :img, :grade, :gender, :guardians_email, :guardians_phone, :inclass, :demerits)
+    params.permit(:id, :firstname, :lastname, :email, :age, :img, :grade, :gender, :guardians_name, :relationship_to_student, :guardians_email, :guardians_phone, :inclass, :demerits, :enrolledClasses)
   end
 
 

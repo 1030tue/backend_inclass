@@ -1,5 +1,5 @@
 class PeriodSerializer < ActiveModel::Serializer
-  attributes :id, :date, :duration, :period_num, :teacher, :students
+  attributes :id, :classname, :duration, :period_num, :teacher, :students
 
 
 
@@ -20,6 +20,8 @@ class PeriodSerializer < ActiveModel::Serializer
       :email => student.email,
       :gender => student.gender,
       :grade => student.grade,
+      :guardians_name => student.guardians_name,
+      :relationship_to_student => student.relationship_to_student,
       :guardians_email => student.guardians_email,     :guardians_phone => student.guardians_phone,
       :inclass => student.inclass,
       :demerits => student.demerits

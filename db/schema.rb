@@ -43,10 +43,12 @@ ActiveRecord::Schema.define(version: 2019_05_14_211455) do
     t.integer "age"
     t.integer "grade"
     t.string "gender"
+    t.string "guardians_name"
+    t.string "relationship_to_student"
     t.string "guardians_email"
     t.string "guardians_phone"
-    t.boolean "inclass"
-    t.integer "demerits"
+    t.boolean "inclass", default: true
+    t.integer "demerits", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,7 +9,12 @@
 
 
 
-Student.create(firstname:"Jean", lastname:"Grey", email:"bruce@tea.com", img: nil, age: 15, grade: 8, gender: "female", guardians_email: "profx@tea.com", guardians_phone: "1234567890", inclass: true, demerits: 0)
+Student.create(firstname:"Jean", lastname:"Grey", email:"carmex.t@tea.com", img: nil, age: 18, grade: 9, gender: "female", guardians_email: "hershey@tea.com", guardians_phone: "1230907890")
 
 
-Student.create(firstname:"Steve", lastname:"Rogers", email:"steve.r@tea.com", img: nil, age: 17, grade: 8, gender: "male", guardians_email: "sarahrogers@tea.com", guardians_phone: "9144395809", inclass: true, demerits: 0)
+Student.create(firstname:"Steve", lastname:"Rogers", email:"steve.r@tea.com", img: nil, age: 17, grade: 8, gender: "male",  guardians_name: "Sarah Roger", relationship_to_student: "mom", guardians_email: "sarahrogers@tea.com", guardians_phone: "9144395809", inclass: true, demerits: 0)
+
+
+Student.create(firstname:"Logan", lastname:"Howlett", email:"logan.h@tea.com", img: nil, age: 17, grade: 9, gender: "male", guardians_name: "wolverine", relationship_to_student: "dad", guardians_email: "wolverine@tea.com", guardians_phone: "9144395809", inclass: true, demerits: 0)
+
+Student.create(firstname:"Peter", lastname:"Parker", email:"steve.r@tea.com", img: nil, age: 17, grade: 8, gender: "male", guardians_name: "Mary", relationship_to_student: "Aunt", guardians_email: "sarahrogers@tea.com", guardians_phone: "9144395809", inclass: true, demerits: 0)
