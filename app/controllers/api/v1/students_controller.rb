@@ -1,4 +1,5 @@
 class Api::V1::StudentsController < ApplicationController
+  skip_before_action :authorized
 
   def index
     @students= Student.all
@@ -11,8 +12,9 @@ class Api::V1::StudentsController < ApplicationController
   end
 
   def create
+    
     @student = Student.create(student_params)
-    Enroll.create(student_id: @student.id, period_id: 1)
+    Enroll.create(student_id: @student.id, period_id: params[:period_id])
     render json: @student
   end
 

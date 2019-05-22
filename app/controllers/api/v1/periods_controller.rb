@@ -1,4 +1,6 @@
 class Api::V1::PeriodsController < ApplicationController
+  skip_before_action :authorized
+  
   def index
     @periods= Period.all
     render json: @periods

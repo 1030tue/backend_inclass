@@ -6,6 +6,12 @@ Rails.application.routes.draw do
       resources :periods
       resources :trips
       resources :enrolls
+      post '/signup', to: "teachers#create" #signup
+      post "/login", to: "auth#login" #login
+
+      # get "/auto_login", to: "auth#auto_login"
+      get '/profile', to: "teachers#profile" #profile
+
    end
   end
 end
