@@ -4,7 +4,7 @@ class TeacherSerializer < ActiveModel::Serializer
 
 
   def fullname
-  self.object.fullname.capitalize
+  self.object.fullname
   end
 
 end

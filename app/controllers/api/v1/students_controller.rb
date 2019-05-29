@@ -12,8 +12,8 @@ class Api::V1::StudentsController < ApplicationController
   end
 
   def create
-    
     @student = Student.create(student_params)
+
     Enroll.create(student_id: @student.id, period_id: params[:period_id])
     render json: @student
   end
@@ -21,12 +21,28 @@ class Api::V1::StudentsController < ApplicationController
   def update
     @student = Student.find(student_params[:id])
     @student.update(student_params)
+    Trip.create(student_id: @student.id, period_id: params[:period_id], destination: params[:destination], start_time: Time.new)
+    @student.save
+    render json: @student
+  end
+
+  # def updateTimer
+  #   @student.endtime = Date.new
+  #   @student.save
+  # end
+
+  def updateTimer
+    @student = Student.find(student_params[:id])
+    @student.update(student_params)
+    @student.trips.last.update(endtime:Time.new, duration: Time.new - @student.trips.last.start_time)
     @student.save
     render json: @student
   end
 
   def destroy
     @student = Student.find(student_params[:id])
+    @enroll=Enroll.find_by(student_id: student_params[:id])
+    @enroll.destroy
     @student.destroy
   end
 

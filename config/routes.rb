@@ -8,10 +8,8 @@ Rails.application.routes.draw do
       resources :enrolls
       post '/signup', to: "teachers#create" #signup
       post "/login", to: "auth#login" #login
-
-      # get "/auto_login", to: "auth#auto_login"
       get '/profile', to: "teachers#profile" #profile
-
+      patch 'students/updateTimer/:id', to: "students#updateTimer" 
    end
   end
 end

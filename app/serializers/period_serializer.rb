@@ -28,7 +28,8 @@ class PeriodSerializer < ActiveModel::Serializer
       :guardians_email => student.guardians_email,
       :guardians_phone => student.guardians_phone,
       :inclass => student.inclass,
-      :demerits => student.demerits
+      :demerits => student.demerits,
+      :trips => student.trips
     }
     end
   end
