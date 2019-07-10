@@ -26,8 +26,6 @@ class Api::V1::AuthController < ApplicationController
   # end
 
 
-
-
   private
   def login_params
     params.require(:teacher).permit(:email, :password)

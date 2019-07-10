@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       post '/signup', to: "teachers#create" #signup
       post "/login", to: "auth#login" #login
       get '/profile', to: "teachers#profile" #profile
-      patch 'students/updateTimer/:id', to: "students#updateTimer" 
+      patch 'students/updateTimer/:id', to: "students#updateTimer"
    end
   end
 end
