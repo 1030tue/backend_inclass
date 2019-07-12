@@ -18,6 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Json Web Token
 gem 'jwt', '~> 2.1'
 
+gem 'fast_jsonapi'
 gem 'dotenv-rails', groups: [:development, :test]
 
 # Use ActiveStorage variant
