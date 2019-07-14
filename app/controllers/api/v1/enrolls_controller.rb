@@ -1,10 +1,6 @@
 class Api::V1::EnrollsController < ApplicationController
-<<<<<<< HEAD
-  skip_before_action :authorized
+skip_before_action :authorized
 
-=======
-  skip_before_action :authorized 
->>>>>>> b40dc7ec953d9333e25a41b766faf4d8c0acabeb
   def index
     @enrolls= Enroll.all
     render json: @enrolls
