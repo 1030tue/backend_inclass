@@ -24,7 +24,7 @@ class Api::V1::PeriodsController < ApplicationController
   end
 
   def destroy
-    debugger
+    
     Enroll.find_by(period_id: period_params[:id]).delete
     @period = Period.find(period_params[:id])
     @period.destroy
