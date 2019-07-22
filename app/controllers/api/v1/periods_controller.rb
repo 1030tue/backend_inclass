@@ -24,7 +24,12 @@ class Api::V1::PeriodsController < ApplicationController
   end
 
   def destroy
-        @period = Period.find(period_params[:id])
+    if Enroll.select{|e| e.period_id == period_params[:id].to_i}.length != 0
+       Enroll.select{|e| e.period_id == period_params[:id].to_i}.each {|e| e.delete}
+       @period = Period.find(period_params[:id].to_i)
+      else
+       @period = Period.find(period_params[:id].to_i)
+    end   
     @period.destroy
   end
 
