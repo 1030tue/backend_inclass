@@ -1,25 +1,22 @@
 class ApplicationController < ActionController::API
-  # protect_from_forgery with: :null_session
   before_action :authorized
 
   def encode_token(payload)
-    # payload => { beef: 'steak' }
+    #byebug
     JWT.encode(payload, ENV['jwt_secret'])
-    # byebug
   end
 
   def auth_header
-    # { 'Authorization': 'Bearer <token>' }
+    #byebug
     request.headers['Authorization']
   end
 
   def decoded_token
+    #byebug
     if auth_header
       token = auth_header.split(' ')[1]
-      # headers: { 'Authorization': 'Bearer <token>' }
       begin
         JWT.decode(token, ENV['jwt_secret'], true, algorithm: 'HS256')
-        # JWT.decode => [{ "beef"=>"steak" }, { "alg"=>"HS256" }]
       rescue JWT::DecodeError
         nil
       end
@@ -29,8 +26,7 @@ class ApplicationController < ActionController::API
 
   def current_teacher
     if decoded_token
-      # decoded_token=> [{"teacher_id"=>2}, {"alg"=>"HS256"}]
-      # or nil if we can't decode the token
+
       teacher_id = decoded_token[0]['teacher_id']
       teacher = Teacher.find_by(id: teacher_id)
     end

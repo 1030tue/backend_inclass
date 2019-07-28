@@ -2,6 +2,10 @@ class Api::V1::TeachersController < ApplicationController
   skip_before_action :authorized
   #, only: [:create]
 
+  def profile
+  render json: { adopter: TeacherSerializer.new(current_teacher) }, status: :accepted
+  end
+
   def index
     @teachers= Teacher.all
     render json: @teachers

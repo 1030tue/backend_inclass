@@ -6,9 +6,9 @@ Rails.application.routes.draw do
       resources :periods
       resources :trips
       resources :enrolls
-      post '/signup', to: "teachers#create" #signup
-      post "/login", to: "auth#login" #login
-      get '/profile', to: "teachers#profile" #profile
+      post '/signup', to: "teachers#create"
+      post "/login", to: "auth#login"
+      get '/profile', to: "teachers#profile" 
       patch 'students/updateTimer/:id', to: "students#updateTimer"
    end
   end
